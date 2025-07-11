@@ -1,6 +1,25 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Epilogue } from 'next/font/google';
 import "./globals.css";
+import Footer from "./components/footer"
+import Navbar from "./components/navbar";
+
+
+const epilogue = Epilogue({
+  subsets: ['latin'],
+  weight: ['700'],                     // nur Bold laden
+  variable: '--font-epilogue',         // CSS-Variable für Tailwind
+});
+
+
+const epiloguebold = Epilogue({
+  subsets: ['latin'],
+  weight: ['800'],                     
+  variable: '--font-epilogue-bold',         
+});
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${epiloguebold.variable}${epilogue.variable}${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar/>
+      
+       
         {children}
+         
+         <Footer />
       </body>
     </html>
   );
