@@ -9,8 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@medusajs/js-sdk": "^2.8.7",
-    "@medusajs/types": "^2.8.7",
+    "@medusajs/medusa-js": "^6.1.10",
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
